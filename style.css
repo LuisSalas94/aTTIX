@@ -1,0 +1,399 @@
+html{
+    box-sizing: border-box; /*{ Box-sizing: Border-box } by Paul Irish*/
+    font-size: 62.5%; /*Reset para REMS - 62.5% = 10px de 16px*/
+}
+*, *:before, *:after { /*{ Box-sizing: Border-box } by Paul Irish*/
+    box-sizing: inherit;
+  }
+
+  body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2; /*incrementar el interlineado*/
+  }
+
+  /*Globales*/
+  img{
+      max-width: 100%;
+  }
+
+  .contenedor{
+      max-width: 120rem;
+      margin: 0 auto 0 auto;
+  }
+
+  h1{
+    font-size: 3.8rem;
+
+    }
+    h2{
+    font-size: 3.4rem;
+
+    }
+    h3{
+        font-size: 3rem;
+
+    }
+    h4{
+        font-size: 2.6rem;
+    }
+
+  /*Utilidades*/
+    
+    .seccion{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .fw-300{
+        font-weight: 300;
+    }
+    .centrar-texto{
+         text-align: center;
+    }
+
+    .d-block{
+        display: block!important;
+    }
+
+    .contenido-centrado{
+        max-width: 80rem;
+    }
+
+    /*Botones*/
+    .boton{
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.8rem;
+        padding: 1rem 3rem;
+        margin-top: 3rem;
+        display: inline-block;
+        text-align: center;
+    }
+    
+    .boton-naranja{
+        background-color: #e08709;
+    }
+    
+    .boton-verde{
+        background-color: #71b100;
+    }
+
+  /*Header*/
+
+  .site-header{
+      background-color: #333333;
+      padding: 1rem 0 3rem 0;
+  }
+
+  .site-header.inicio{
+      background-image: url(img/foto1.jpg);
+      background-position: center center;
+      background-size: cover;
+      height: 100vh; /*Altura de la pantalla*/
+      min-height: 40rem; /*600px*/
+      animation: movimiento 10s infinite linear alternate;  /*Animacion-PASO1*/
+
+  }
+  @keyframes movimiento{                                    /*Animacion-PASO2*/
+      from{
+        background-position: top left;
+      }to{
+        background-position: bottom right;
+      }
+  }
+ 
+
+  .contenido-header{
+      height: 100%;
+      display: flex; /*Uso de flexbox*/
+      flex-direction:column; /*posicionar contenido de arriba a abajo*/
+      justify-content: space-between;
+      opacity: 0.4;
+      
+  }
+
+  .contenido-header h1{
+      color: white;
+      padding-bottom: 3rem;
+      max-width: 50rem;
+      line-height: 2; /*interlineado*/
+  }
+
+  .barra{
+      display: flex;
+      justify-content: space-between; /*alinear de derecha a izquierda*/
+      align-items: center; /*alinear logo y enlaces*/
+      padding-top: 2rem;
+  }
+
+  /*Navegacion*/
+
+  .navegacion a{
+      color:black;
+      text-decoration: none;
+      font-size: 3.5rem;
+      margin-right: 3rem;
+  }
+
+  .navegacion a:hover{ /*cambiar de color a los enlaces cuando pasas sobre el*/
+      color: #71b100;
+  }
+ 
+  .navegacion a:last-of-type{ 
+      margin: 0;
+  }
+
+  /*Icono*/
+
+  .iconos-nosotros{
+      display: flex;
+      justify-content: space-between;
+  }
+  .icono{
+      flex-basis:(33.3% - 1rem);
+      text-align: center;
+  }
+
+  .icono h3{
+      text-transform: uppercase;
+  }
+
+  /*Anuncios*/
+
+  .contenedor-anuncios{         /*PASO1*/
+      display: flex;
+      justify-content: space-between; /*genera separacion*/
+      flex-wrap: wrap; /*Se aplica al padre y el a sus hijos OJO practicas esta funcion*/
+  }
+
+  .anuncio{                     /*PASO2*/
+    flex-grow: 0; /*Para que el contenido crezca SI es posible*/
+    flex-shrink: 0; /*Por default viene con 1, si se pone 0 no se encoje y toma tamaño de la base,Para que se encoja si es posible*/
+    flex-basis: calc(33.3%  - 1rem); /*Tamaño asignado*/
+    border: 1px solid #b5b5b5;
+    background-color: white;
+    margin-bottom: 2rem;
+
+  }
+  
+  .contenido-anuncio{
+      padding: 2rem;
+  }
+
+  .contenido-anuncio h3{
+      margin: 0;
+  }
+
+  .contenido-anuncio p{
+    margin: 0;
+}
+
+.precio{
+    color: #71b100;
+    font-weight: 700;
+}
+ .ver-todas{
+     display: flex;
+     justify-content: flex-end;
+ }
+
+ /*Contacto Sueños*/
+
+ .imagen-sueños{
+     background-image: url(img/ps4/prueba4.jpg);
+     background-position: center center;
+     background-size: cover ;
+     height: 50rem;
+     display: flex;
+     align-items: center;
+ }
+ 
+ .contenido-sueños{
+     flex: 1;   /*Factor de crecimiento*/
+     color: white;
+ }
+ 
+ .contenido-contacto p{
+     font-size: 1.8rem;
+ }
+
+ /*Seccion Inferior*/
+
+
+ .seccion-inferior{
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .seccion-inferior.sueños{
+     flex-basis: 60%;
+ }
+
+ .seccion-inferior.testimoniales{
+     flex-basis: calc(40% - 2rem);
+ }
+
+ .entrada-sueños{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+ }
+ .entrada-sueños:last-of-type{
+     margin-bottom: 0;
+ }
+ .entrada-sueños.imagen{
+     flex-basis: 40%;
+ }
+ .entrada-sueños.texto-entrada{
+     flex-basis: calc(60% - 3rem);
+ }
+ .texto-entrada a{
+     color: black;
+     text-decoration: none;
+ }
+ .texto-entrada h4{
+     margin: 0;
+     line-height: 1.4;
+ }
+ .texto-entrada h4::after{ /*Crear Pseudoelemento*/
+    content: "";
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color: #71b100;
+    margin-top: 1rem;
+ }
+
+ /*Testimonial*/
+
+.testimonial{
+    background-color: #71b100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color:white;
+    border-radius: 2rem;
+}
+.testimonial p{
+    text-align: right;
+}
+.testimonial blockquote::before{ /*Creacion de Pseudoelemnto-ANTES*/
+    content: "";
+    background-image: url(img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: -2rem;
+}
+.testimonial blockquote{
+    position: relative;
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+/*Footer*/
+
+.site-footer{
+    background-color: #333333;
+    margin: 0;
+}
+.contenedor-footer{
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.copyright{
+    margin: 0;
+    color: white;
+    line-height: 8rem;
+}
+ 
+
+/*Paginas Internas*/
+
+/*Nosotros*/
+
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 50% 50%; /*grid divide en 2 columnas, tambien se puede usar 1fr(1 fraccion)*/
+    grid-column-gap: 2rem; /*Agregar separacion*/
+}
+
+.texto-nosotros blockquote{
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem 0 3rem 0;
+}
+
+
+/*Contacto*/
+
+.contacto p{
+    font-size: 1.4rem;
+    color: #4f4f4f;
+    margin: 2rem 0 0 0;
+}
+
+legend{
+    font-size: 2.4rem;
+    color: #333333;
+}
+
+label{
+    font-weight:700;
+    text-transform: uppercase;
+    display:block;
+
+}
+
+input:not([type="submit"]),
+ textarea,
+ select{  /*Se usa el input:not([type="submit"]),afecta a todo menos a submit*/
+     padding: 1rem;
+     display: block;
+     width: 100%;
+     background-color:#e1e1e1;
+     margin-bottom: 2rem;
+     border: none;
+     border-radius: 1rem;
+}
+
+input[type="radio"]{
+    width: auto;  /*Usa espacio que requiere no usar mas*/
+    margin: 0;
+}
+
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+textarea{
+    height: 20rem;
+}
+
+.forma-contacto{
+    max-width: 30rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
